@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="not-hello">
     <h1>__PLACEHOLDER__</h1>
     <h2>{{ msg }}</h2>
   </div>
@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 
-export default class HelloWorld extends Vue {
+export default class NotHelloWorld extends Vue {
   public msg = window.EMBED_MSG;
 }
 </script>
@@ -17,6 +17,6 @@ export default class HelloWorld extends Vue {
 <style scoped lang="scss">
 h1,
 h2 {
-  color: red;
+  color: blue;
 }
 </style>

@@ -1,13 +1,13 @@
 module.exports = {
   pages: {
     index: {
-      entry: './src/main.ts',
+      entry: './src/not-main.ts',
       template: './public/index.html',
     },
   },
 
   chainWebpack: (config) => {
-    const tsReplaceStr = 'AAA';
+    const tsReplaceStr = 'BBB';
     config.module.rule('replace-ts-str')
       .test(/\.(?:ts|vue|js)$/)
       .before('ts')
@@ -26,7 +26,8 @@ module.exports = {
       })
       .end();
 
-    const htmlReplaceStr = '"embeded from vue.config.js"';
+    const htmlReplaceStr1 = '';
+    const htmlReplaceStr2 = '"embeded from vue.config.nhw.dev.js"';
     config.module.rule('replace-html-str')
       .test(/\.html$/)
       .use('raw')
@@ -38,8 +39,13 @@ module.exports = {
         return {
           multiple: [
             {
+              search: '__META__',
+              replace: htmlReplaceStr1,
+              flags: 'g'
+            },
+            {
               search: '__PLACEHOLDER__',
-              replace: htmlReplaceStr,
+              replace: htmlReplaceStr2,
               flags: 'g'
             }
           ]

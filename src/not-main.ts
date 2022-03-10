@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import NotHelloWorld from "./components/NotHelloWorld.vue";
 
 declare global {
   interface Window {
@@ -7,4 +7,4 @@ declare global {
   }
 }
 window.EMBED_MSG = window.EMBED_MSG || "";
-createApp(HelloWorld).mount("#app");
+createApp(NotHelloWorld).mount("#app");

@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build:dev": "vue-cli-service build --mode development",
+    "serve:hw": "VUE_CLI_SERVICE_CONFIG_PATH=$PWD/vue.config.js vue-cli-service serve",
+    "serve:hw": "VUE_CLI_SERVICE_CONFIG_PATH=$PWD/config/vue.config.hw.dev.js vue-cli-service serve",
+    "serve:nhw": "VUE_CLI_SERVICE_CONFIG_PATH=$PWD/config/vue.config.nhw.dev.js vue-cli-service serve",
+    "build": "npm run build:hw && npm run build:nhw",
+    "build:hw": "VUE_CLI_SERVICE_CONFIG_PATH=$PWD/config/vue.config.hw.prod.js vue-cli-service build --mode development",
+    "build:nhw": "VUE_CLI_SERVICE_CONFIG_PATH=$PWD/config/vue.config.nhw.prod.js vue-cli-service build --mode development",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
